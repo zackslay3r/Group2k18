@@ -302,6 +302,7 @@
     <Compile Include="Assets\Patrol.cs" />
     <Compile Include="Assets\Patrolling.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\Possession.cs" />
     <Compile Include="Assets\WapointTest.cs" />
     <Compile Include="Assets\waypointScript.cs" />
   </ItemGroup>
