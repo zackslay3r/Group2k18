@@ -11,7 +11,7 @@ public class Possession : MonoBehaviour {
 
     //This is the current possessible character;
 
-    GameObject currentCharacter;
+    public GameObject currentCharacter;
 
 
     public float distanceAway;
@@ -29,6 +29,7 @@ public class Possession : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
+            bool swapped = false;
             foreach (GameObject characters in possessables)
             {
                 if (characters == currentCharacter)
@@ -39,8 +40,23 @@ public class Possession : MonoBehaviour {
                 {
                     if (Vector3.Distance(currentCharacter.transform.position, characters.transform.position) < distanceAway)
                     {
-                        currentCharacter = characters;
-                        mainCamera.player = characters;
+
+
+                        if (swapped == false)
+                        {
+                            currentCharacter.GetComponent<PlayerMovement>().enabled = false;
+                            currentCharacter.GetComponent<Animator>().enabled = false;
+                            currentCharacter = characters;
+                            mainCamera.player = characters;
+                            currentCharacter.GetComponent<PlayerMovement>().enabled = true;
+                            currentCharacter.GetComponent<Animator>().enabled = true;
+                            swapped = true;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    
                     };
                 }
             }
