@@ -44,12 +44,18 @@ public class Possession : MonoBehaviour {
 
                         if (swapped == false)
                         {
-                            currentCharacter.GetComponent<PlayerMovement>().enabled = false;
-                            currentCharacter.GetComponent<Animator>().enabled = false;
+                            if (currentCharacter.GetComponent<PlayerMovement>() != null && currentCharacter.GetComponent<Animator>() != null)
+                            {
+                                currentCharacter.GetComponent<PlayerMovement>().enabled = false;
+                                currentCharacter.GetComponent<Animator>().enabled = false;
+                            }
                             currentCharacter = characters;
                             mainCamera.player = characters;
-                            currentCharacter.GetComponent<PlayerMovement>().enabled = true;
-                            currentCharacter.GetComponent<Animator>().enabled = true;
+                            if (currentCharacter.GetComponent<PlayerMovement>() != null && currentCharacter.GetComponent<Animator>() != null)
+                            {
+                                currentCharacter.GetComponent<PlayerMovement>().enabled = true;
+                                currentCharacter.GetComponent<Animator>().enabled = true;
+                            }
                             swapped = true;
                         }
                         else
