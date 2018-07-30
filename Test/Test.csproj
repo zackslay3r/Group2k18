@@ -317,6 +317,7 @@
   <ItemGroup>
     <Compile Include="Assets\CameraFol.cs" />
     <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\Haunt.cs" />
     <Compile Include="Assets\Movementplane.cs" />
     <Compile Include="Assets\Patrol.cs" />
     <Compile Include="Assets\Patrolling.cs" />

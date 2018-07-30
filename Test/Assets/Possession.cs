@@ -38,7 +38,11 @@ public class Possession : MonoBehaviour {
                 }
                 else
                 {
-                    if (Vector3.Distance(currentCharacter.transform.position, characters.transform.position) < distanceAway)
+                    // test variable to test out the distance
+                    float testDistance = Vector3.Distance(currentCharacter.transform.position, characters.transform.position);
+
+                    
+                    if (testDistance < distanceAway)
                     {
 
 
