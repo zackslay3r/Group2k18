@@ -53,15 +53,16 @@ public class Possession : MonoBehaviour {
                     
                     if (testDistance < distanceAway)
                     {
-                        characters.transform.position = new Vector3(characters.transform.position.x, characters.transform.position.y, 25);
-
+                        
                         if (swapped == false)
                         {
+                            characters.transform.position = new Vector3(characters.transform.position.x, characters.transform.position.y, 25);
                             if (currentCharacter.GetComponent<PlayerMovement>() != null && currentCharacter.GetComponent<Animator>() != null)
                             {
                                 currentCharacter.GetComponent<PlayerMovement>().enabled = false;
                                 currentCharacter.GetComponent<Animator>().enabled = false;
                             }
+                            currentCharacter.transform.position = new Vector3(currentCharacter.transform.position.x, currentCharacter.transform.position.y, 42);
                             currentCharacter = characters;
                             mainCamera.player = characters;
                             if (currentCharacter.GetComponent<PlayerMovement>() != null && currentCharacter.GetComponent<Animator>() != null)
@@ -69,6 +70,8 @@ public class Possession : MonoBehaviour {
                                 currentCharacter.GetComponent<PlayerMovement>().enabled = true;
                                 currentCharacter.GetComponent<Animator>().enabled = true;
                             }
+                            
+                            
                             swapped = true;
                         }
                         else
