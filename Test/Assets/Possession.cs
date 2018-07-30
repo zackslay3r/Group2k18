@@ -14,6 +14,9 @@ public class Possession : MonoBehaviour {
     public GameObject currentCharacter;
 
 
+    
+
+
     public float distanceAway;
 
     // This is the camera.
@@ -23,9 +26,15 @@ public class Possession : MonoBehaviour {
 	void Start () {
         currentCharacter = mainCamera.player; 
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
+
+        
+
+
+
+
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
@@ -44,7 +53,7 @@ public class Possession : MonoBehaviour {
                     
                     if (testDistance < distanceAway)
                     {
-
+                        characters.transform.position = new Vector3(characters.transform.position.x, characters.transform.position.y, 25);
 
                         if (swapped == false)
                         {
